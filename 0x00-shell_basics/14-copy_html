@@ -1,2 +1,2 @@
 #!/bin/bash
-for file in *.html; do cp -u -n "$file" "$(dirname "$PWD")"; done
+cp -un *.html ../
