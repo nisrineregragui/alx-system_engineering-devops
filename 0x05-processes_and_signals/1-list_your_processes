@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#1-list_your_processes
+echo "PID   | PPID  | USERNAME | COMMAND"
+
+while IFS= read -r line; do
+    pid=$(echo "$line" | awk '{print $1}')
+    ppid=$(echo "$line" | awk '{print $2}')
+    username=$(echo "$line" | awk '{print $3}')
+    command=$(echo "$line" | awk '{$1=$2=$3=""; print $0}')
+
+    echo "$pid | $ppid | $username | $command"
+done < <(ps -ef --forest | tail -n +2)
+
