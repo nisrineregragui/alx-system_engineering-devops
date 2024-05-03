@@ -1,4 +1,4 @@
-#Â!/usr/bin/env bash
+#!/usr/bin/env bash
 #5-dont_stop_me_now
 id=$(pgrep "bash" ./4-to_infinity_and_beyond" -f)
 if [ -n "$id" ]
